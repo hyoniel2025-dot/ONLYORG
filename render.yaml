@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: bot-archivador
+    runtime: python
+    plan: free
+    pythonVersion: "3.11.8"
+    buildCommand: apt-get install -y p7zip-full && pip install -r requirements.txt && pip install -U yt-dlp
+    startCommand: python bot.py
+    healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.8"
