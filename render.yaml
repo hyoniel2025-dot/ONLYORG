@@ -5,7 +5,7 @@ services:
     plan: free
     pythonVersion: "3.11.8"
     buildCommand: apt-get install -y p7zip-full && pip install -r requirements.txt && pip install -U yt-dlp
-    startCommand: python bot.py
+    startCommand: python3 bot.py
     healthCheckPath: /
     envVars:
       - key: PYTHON_VERSION
